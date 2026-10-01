@@ -66,7 +66,7 @@ MFMS
 | 2   | Corneluis D Frans | 216073529       | Functions, Integration & Validation |
 | 3   | Dave K Angulah    | 201030586       | Budget Module                       |
 | 4   | Kaluwa Martha     | 222051078       | Supplier Management                 |
-| 5   | To be confirmed   | To be confirmed | To be confirmed                     |
+| 5   | Tjiharuka Utjiwee |219110972        | Assets Management
 | 6   | To be confirmed   | To be confirmed | To be confirmed                     |
 | 7   | To be confirmed   | To be confirmed | To be confirmed                     |
 
