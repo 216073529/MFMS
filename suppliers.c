@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-//define a structure to hold supplier information
+
 struct Supplier {
     int supplierID;
     char supplierName[50];
@@ -11,7 +11,7 @@ struct Supplier {
     char location[50];
 };
 
-int main() //main function for supplier management system
+int main() 
 {
     struct Supplier suppliers[100];
     int maxSuppliers = 100;
@@ -20,7 +20,7 @@ int main() //main function for supplier management system
     int searchID;
     int found;
     char temp[100];
-    //menu for supplier management system
+    
 
     do
     {
@@ -35,9 +35,9 @@ int main() //main function for supplier management system
         fgets(temp, sizeof(temp), stdin);
         choice = atoi(temp);
 
-        switch(choice) //switch case for supplier management system
+        switch(choice) 
         {
-            case 1://Prompt use r to enter supplier information
+            case 1:
                 if (count < maxSuppliers)
                 {
                     printf("\n****** ADD SUPPLIER ******\n");
@@ -72,7 +72,7 @@ int main() //main function for supplier management system
                 }
                 break;
 
-            case 2://display alllsupplier information in the system
+            case 2:
                 printf("\n*****  SUPPLIER INFORMATION *****\n");
                 if(count == 0) printf("No suppliers yet.\n");
                 for (int idx = 0; idx < count; idx++)
@@ -85,13 +85,13 @@ int main() //main function for supplier management system
                 }
                 break;
 
-            case 3: //search for supplier by ID and display their information if found
+            case 3: 
                 printf("\nEnter Supplier ID to search: ");
                 fgets(temp, sizeof(temp), stdin);
                 searchID = atoi(temp);
                 found = 0;
 
-                for (int idx = 0; idx < count; idx++)//decision making to check if supplier ID exists in the system
+                for (int idx = 0; idx < count; idx++)
                 {
                     if (suppliers[idx].supplierID == searchID)
                     {
@@ -108,14 +108,15 @@ int main() //main function for supplier management system
                 if (found == 0) printf("\nSupplier not found.\n");
                 break;
 
-            case 4: { //search for supplier by name and display their information if found
+            case 4: { 
                 char searchName[50];
                 printf("\nEnter Supplier Name: ");
                 fgets(searchName, sizeof(searchName), stdin);
                 searchName[strcspn(searchName, "\n")] = '\0';
                 found = 0;
 
-                for (int idx = 0; idx < count; idx++)//decision making to check if supplier name exists in the system
+                for (int idx = 0; idx < count; idx++)
+                
                 {
                     if (strcmp(suppliers[idx].supplierName, searchName) == 0)
                     {
@@ -133,7 +134,8 @@ int main() //main function for supplier management system
                 break;
             }
 
-            case 5://exit case for supplier management system
+            case 5:
+            
                 printf("\nHave a nice day!\n");
                 break;
 
@@ -141,7 +143,8 @@ int main() //main function for supplier management system
                 printf("\nSorry, invalid choice.\n");
                 break;
         }
-    } while (choice!= 5);  //loop until the user choose to exit the supplier management system
+    } while (choice!= 5);  
+    
 
     return 0;
 }
