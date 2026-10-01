@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "employee.h"
 
 #define Total_employee 50
 struct Employee
@@ -23,7 +24,7 @@ void salaryInformation();
 void displayEmployee(int i);
 float getGrossSalary(int i);*/
 
-//adding an employee
+
 void addEmployee(){
     if(employeeCount >= Total_employee){
             printf("We can not add employee, limit reached!\n");
@@ -33,7 +34,7 @@ void addEmployee(){
 
     printf("Enter Employee ID : ");
     scanf("%d", &employees[employeeCount].employeeID);
-    getchar();
+    while (getchar() != '\n');
 
     printf(" Enter Employee Name : ");
     fgets(employees[employeeCount].employeeName, 50, stdin);
@@ -111,7 +112,7 @@ void addEmployee(){
             return;
         }
         printf("\n To search enter Employee ID \n");
-        scanf("%d",id);
+        scanf("%d", &id);
 
         for(i = 0; i< employeeCount; i++){
             if(employees[i].employeeID == id){
@@ -150,7 +151,7 @@ void salaryInformation() {
 
             grossSalary = getGrossSalary(i);
 
-            // Example: 10% tax
+            
             tax = grossSalary * 0.20;
 
             netSalary = grossSalary - tax;
@@ -163,7 +164,7 @@ void salaryInformation() {
                    employees[i].housingAllowence);
             printf("TRANSPORT ALLOWENCE: %.2f\n",
                    employees[i].transportAllowence);
-            printf("JOB POSITION: %.2f\n",
+            printf("JOB POSITION: %s\n",
                    employees[i].position);
             printf("GROSS SALARY: %.2f\n", grossSalary);
             printf("TAX (20%%): %.2f\n", tax);
@@ -177,43 +178,4 @@ void salaryInformation() {
     if (found == 0) {
         printf("\nSorry we can find that employee.\n");
     }
-}
-int main() {
-    int option;
-
-    do {
-        printf("\n----------------------------------\n");
-        printf("       EMPLOYEE MANAGEMENT\n");
-        printf("\n--------------------------------------\n");
-        printf("1. Add Employee\n");
-        printf("2. Display Employees\n");
-        printf("3. Search for Employee\n");
-        printf("4. Calculate Salary Information\n");
-        printf("5. Exit\n");
-        printf("=================================\n");
-        printf("Enter your choice: ");
-        scanf("%d", &option);
-
-        if (option == 1) {
-            addEmployee();
-        }
-        else if (option == 2) {
-            displayEmployees();
-        }
-        else if (option == 3) {
-            searchEmployee();
-        }
-        else if (option == 4) {
-            salaryInformation();
-        }
-        else if (option == 5) {
-            printf("\nExiting Employee Management...\n");
-        }
-        else {
-            printf("\nInvalid choice. Please try again.\n");
-        }
-
-    } while (option != 5);
-
-    return 0;
 }
