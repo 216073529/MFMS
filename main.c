@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "budget.h"
 
 void showMenu();
 
@@ -15,7 +16,7 @@ switch(option)
     printf("\nEmployee Management.\n");
     break;
     case 2:
-    printf("\nBudget Management.\n");
+    budgetManagement();
     break;
     case 3:
     printf("\nSupplier Management.\n");
