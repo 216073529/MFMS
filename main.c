@@ -3,6 +3,7 @@
 #include "employee.h"
 #include "supplier.h"
 #include "assets.h"
+#include "reports.h"
 
 void showMenu();
 
@@ -154,7 +155,7 @@ switch(option)
     break;
 }
     case 5:
-    printf("\nReports.\n");
+    reportsMenu();
     break;
     case 6:
     printf("\nExiting Municipal Financial System.\n");

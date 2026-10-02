@@ -11,6 +11,9 @@ typedef struct
     float expenditure;
 } Budget;
 
+extern Budget budgets[MAX_BUDGETS];
+extern int budgetCount;
+
 void budgetManagement();
 void addBudget();
 void displayBudgets();
