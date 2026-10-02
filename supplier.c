@@ -121,6 +121,8 @@ void searchSupplierByName()
     char searchName[50];
     int found = 0;
 
+
+
     printf("\nEnter Supplier Name: ");
     fgets(searchName, sizeof(searchName), stdin);
     searchName[strcspn(searchName, "\n")] = '\0';
